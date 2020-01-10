@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CurrFuelMeterComponent } from './core/curr-fuel-meter/curr-fuel-meter.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CurrFuelMeterComponent
   ],
   imports: [
     BrowserModule,
