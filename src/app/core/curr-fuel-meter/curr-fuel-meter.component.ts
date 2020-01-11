@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GetCurrFuelService } from 'src/app/services/get-curr-fuel.service';
+import { FuelLevel } from 'src/app/model/curr-fuel-level';
+
 
 @Component({
   selector: 'app-curr-fuel-meter',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrFuelMeterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getCurrFuelService:GetCurrFuelService) { }
 
-  ngOnInit() {
+  fuelLevel:FuelLevel={
+    level:null
+  };
+  level:number;
+
+
+  ngOnInit(){
+    this.getCurrFuelService.getCurrFuel().subscribe(
+      (doc)=>{
+        this.fuelLevel = Object.assign({},{...doc}) as FuelLevel;
+        this.level = this.fuelLevel.level;
+        // console.log(this.fuelLevel)
+      }
+    );
   }
 
 }
