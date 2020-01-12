@@ -12,11 +12,13 @@ import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { UserComponent } from './user/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CurrFuelMeterComponent
+    CurrFuelMeterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
