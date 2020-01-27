@@ -7,3 +7,15 @@ What features do I want now?
 	Can be improved by representing diagramatically
 	
 	
+ this.refreshData();
+    this.interval = setInterval(() => { 
+        this.refreshData(); 
+    }, 5000);
+}
+
+refreshData(){
+    this.myService.getData()
+        .subscribe(data => {
+            this.data = data;
+        })
+    );
