@@ -15,10 +15,12 @@ export class CurrFuelMeterComponent implements OnInit {
               private refilService:RefilService) { }
 
   fuelLevel:FuelLevel={
-    level:null
+    level:null,
+    density:null
   };
   level:number;
   oLevel:number;
+  density:any;
   interval:any;
   mode:string;
   refil:number=null;
@@ -37,6 +39,7 @@ export class CurrFuelMeterComponent implements OnInit {
         this.fuelLevel = Object.assign({},{...doc}) as FuelLevel;
         this.oLevel = this.level;
         this.level = this.fuelLevel.level;
+        this.density = this.fuelLevel.density
       }
     );
     this.checkIncrease();
