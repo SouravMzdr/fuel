@@ -14,13 +14,15 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { UserComponent } from './user/user/user.component';
 import { RefilComponent } from './refil/refil.component';
+import { NavbarComponent } from './ui/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrFuelMeterComponent,
     UserComponent,
-    RefilComponent
+    RefilComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
