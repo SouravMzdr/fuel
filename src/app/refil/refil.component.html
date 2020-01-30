@@ -1,0 +1,11 @@
+<div class="container">
+    
+    <h3>Last Refill</h3>
+    <div class="alert alert-dark" role="alert">
+    <div *ngIf="refil.amount!=null; else noRefill">Fuel refilled by {{ refil.amount }} on time {{ refil.time }}</div>
+    
+    <ng-template #noRefill>We will monitor the amount of fuel refuelled </ng-template>
+    
+      </div>
+
+</div>
