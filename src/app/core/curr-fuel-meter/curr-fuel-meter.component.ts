@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetCurrFuelService } from 'src/app/services/get-curr-fuel.service';
 import { FuelLevel } from 'src/app/model/curr-fuel-level';
 import { RefilService } from 'src/app/services/refil.service';
+import { StreamPriorityOptions } from 'http2';
 
 
 @Component({
@@ -25,9 +26,13 @@ export class CurrFuelMeterComponent implements OnInit {
   mode:string;
   refil:number=null;
 
+  lat:number
+  long:number
+
 
   ngOnInit(){
     this.refreshData();
+
     this.interval = setInterval(() => { 
         this.refreshData(); 
     },1000); //get real time fuel level every 1 second
@@ -47,12 +52,13 @@ export class CurrFuelMeterComponent implements OnInit {
 
   checkIncrease(){
     if (this.level > this.oLevel){
-    this.refil = this.level - this.oLevel;
-    this.refilService.getAmount(this.refil);
+    this.refil = this.level - this.oLevel;    
+    this.refilService.getAmount(this.refil,this.level);
     }
     else{
       this.refil = null
     }
   }
+
 
 }

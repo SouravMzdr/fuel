@@ -13,7 +13,10 @@ export class RefilComponent implements OnInit {
 
   refil:lastRefil={
     amount:null,
-    time:null
+    newLevel:null,
+    time:null,
+    lat:null,
+    long:null
   }
   interval:any
 
@@ -22,12 +25,11 @@ export class RefilComponent implements OnInit {
     this.refreshData();
     this.interval = setInterval(() => { 
         this.refreshData(); 
-    },1000); //get real time fuel level every 5 seconds
+    },1000); 
   }
 
   refreshData(){
-    this.refil = this.getRefilService.showRefil();
-    console.log(this.refil.time)
+    this.refil = this.getRefilService.showRefil();   
   }
 
 }

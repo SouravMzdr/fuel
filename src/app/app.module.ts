@@ -15,6 +15,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { UserComponent } from './user/user/user.component';
 import { RefilComponent } from './refil/refil.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
+import { isPlatformBrowser } from '@angular/common';
+
+import {AgmCoreModule} from '@agm/core';
+import { RefilLocationComponent } from './refil-location/refil-location.component'
 
 @NgModule({
   declarations: [
@@ -22,13 +26,18 @@ import { NavbarComponent } from './ui/navbar/navbar.component';
     CurrFuelMeterComponent,
     UserComponent,
     RefilComponent,
-    NavbarComponent
+    NavbarComponent,
+    RefilLocationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AgmCoreModule.forRoot({
+      apiKey : environment.googleMapsKey
+    })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
