@@ -1,7 +1,7 @@
 <div class="container">
     <h3>Last Refill</h3>
 
-    <div *ngIf="refil.amount!=null; else noRefill">Fuel refilled by {{ refil.amount }} ltr on time {{ refil.time }} <br>
+    <div *ngIf="refil.amount!=null; else noRefill">Fuel refilled by {{ refil.amount }} ltr on  {{ date }} at {{ time }} hrs <br>
         Fuel Reading after refuling is {{ refil.newLevel }} ltr
 
         <div *ngIf="refil.lat!=null" >

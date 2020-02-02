@@ -17,7 +17,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { UserComponent } from './user/user/user.component';
 import { RefilComponent } from './refil/refil.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
-import { isPlatformBrowser } from '@angular/common';
+import { DatePipe } from '@angular/common'
 
 import {AgmCoreModule} from '@agm/core';
 import { RefilLocationComponent } from './refil-location/refil-location.component';
@@ -50,7 +50,8 @@ import { PannelComponent } from './ui/pannel/pannel.component';
     ChartsModule
     
   ],
-  providers: [],
+  providers: [
+    DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
