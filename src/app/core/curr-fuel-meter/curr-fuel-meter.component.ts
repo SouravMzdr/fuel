@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetCurrFuelService } from 'src/app/services/get-curr-fuel.service';
 import { FuelLevel } from 'src/app/model/curr-fuel-level';
 import { RefilService } from 'src/app/services/refil.service';
-import { StreamPriorityOptions } from 'http2';
+// import { StreamPriorityOptions } from 'http2';
 
 
 @Component({

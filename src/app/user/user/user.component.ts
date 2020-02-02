@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
     this.userService.getUser().subscribe(
       (doc) => {
         this.user = Object.assign({},{...doc[0]}) as User;
-        console.log(doc);
+        // console.log(doc);
         
       }
     )
