@@ -7,7 +7,7 @@ import { CurrFuelMeterComponent } from './core/curr-fuel-meter/curr-fuel-meter.c
 
 
 import { environment } from 'src/environments/environment';
-
+import { ChartsModule } from 'ng2-charts';
 
 
 //Firebase
@@ -23,6 +23,8 @@ import {AgmCoreModule} from '@agm/core';
 import { RefilLocationComponent } from './refil-location/refil-location.component';
 import { FindNearbyComponent } from './find-nearby/find-nearby.component'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FuelUsageComponent } from './graph/fuel-usage/fuel-usage.component';
+import { PannelComponent } from './ui/pannel/pannel.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RefilComponent,
     NavbarComponent,
     RefilLocationComponent,
-    FindNearbyComponent
+    FindNearbyComponent,
+    FuelUsageComponent,
+    PannelComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +45,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AgmCoreModule.forRoot({
-      apiKey : environment.googleMapsKey
+      apiKey : environment.googleMapsKey,
     }),
-    
+    ChartsModule
     
   ],
   providers: [],

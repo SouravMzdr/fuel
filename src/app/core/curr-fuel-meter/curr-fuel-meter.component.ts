@@ -35,7 +35,7 @@ export class CurrFuelMeterComponent implements OnInit {
 
     this.interval = setInterval(() => { 
         this.refreshData(); 
-    },1000); //get real time fuel level every 1 second
+    },1500); //get real time fuel level every 1 second
   }
 
   refreshData(){
@@ -51,9 +51,15 @@ export class CurrFuelMeterComponent implements OnInit {
   }
 
   checkIncrease(){
+    // console.log(this.level);
+    // console.log(this.oLevel);
     if (this.level > this.oLevel){
-    this.refil = this.level - this.oLevel;    
-    this.refilService.getAmount(this.refil,this.level);
+      let delta:number = this.level - this.oLevel
+      if (delta > 0 ){
+        this.refil = this.level - this.oLevel;    
+        this.refilService.getAmount(this.refil,this.level);
+      }
+      
     }
     else{
       this.refil = null
